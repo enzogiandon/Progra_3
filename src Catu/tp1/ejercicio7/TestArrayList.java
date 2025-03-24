@@ -111,4 +111,6 @@ public class TestArrayList {
 	}
 	
 	//PUNTO J
+	public ArrayList<Integer> combinarOrdenado(ArrayList<Integer> lista1,
+			ArrayList<Integer> lista2);
 }
