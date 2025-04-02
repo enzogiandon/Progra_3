@@ -77,7 +77,7 @@ public class BinaryTree<T> {
 		int cantHojas = 0;
 		if (this.isLeaf())
 			return 1;
-        //si no es una hoja: 
+		// si no es una hoja:
 		if (this.hasLeftChild())
 			cantHojas += leftChild.contarHojas();
 		if (this.hasRightChild())
@@ -85,22 +85,41 @@ public class BinaryTree<T> {
 		return cantHojas;
 
 	}
-	
-	public BinaryTree<T> espejo(){
+
+	public BinaryTree<T> espejo() {
 
 		BinaryTree<T> esp = new BinaryTree<T>(data);
-		
+
 		if (this.hasLeftChild())
-			leftChild.espejo();
+			esp.addRightChild(leftChild);
 		if (this.hasRightChild())
-			rightChild.espejo();
-			
-		
-		
-		
-		esp.addLeftChild(rightChild);
-		esp.addRightChild(leftChild);
-		return esp;								
+			esp.addLeftChild(rightChild);
+
+		return esp;
+	}
+
+	// Falta implementar la clase Queue en el tp1 y entre n y m
+	
+	public void entreNiveles(int n, m) {
+		BinaryTree<T> ab = null;
+		Queue<BinaryTree<T>> cola = new Queue<BinaryTree<T>>();
+		cola.enqueue(this);
+		cola.enqueue(null);
+		while (!cola.isEmpty()) {
+			ab = cola.dequeue();
+			if (ab != null) {
+				System.out.print(ab.getData());
+				if (ab.hasLeftChild()) {
+					cola.enqueue(ab.getLeftChild());
+				}
+				if (ab.hasRightChild()) {
+					cola.enqueue(ab.getRightChild());
+				}
+			} else if (!cola.isEmpty()) {
+				System.out.println();
+				cola.enqueue(null);
+			}
+		}
 	}
 
 }
