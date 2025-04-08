@@ -1,6 +1,6 @@
 package tp2_ej2;
 
-import arbolBinario.BinaryTree;
+import tp2.ej1y2.BinaryTree;
 import java.util.Scanner;
 
 public class Ej2 {
@@ -39,7 +39,7 @@ public class Ej2 {
 		int nodos = Integer.valueOf(s.nextInt());
 		System.out.println("Ingrese el valor máximo que puede tener los nodos del arbol");
 		int max = Integer.valueOf(s.nextInt());
-		T.createTreeWithRandomValues(nodos,max);
+		// T.createTreeWithRandomValues(nodos,max);
 		s.close();
 		
 		return T;
