@@ -60,6 +60,27 @@ public class ContadorArbol {
 		return lista;
 		
 	}
-	
+	public List<Integer> numerosParesPostOrden(){
+		ContadorArbol aux = new ContadorArbol();
+		List<Integer> lista  = new LinkedList<Integer>();
+
+		
+		if (arbol.hasLeftChild()) {
+			aux.setArbol(arbol.getLeftChild());
+			lista.addAll(aux.numerosParesEnOrden());
+		}
+		
+		
+		if (arbol.hasRightChild()) {
+			aux.setArbol(arbol.getRightChild());
+			lista.addAll(aux.numerosParesEnOrden());
+		}
+
+		if ((arbol != null) && (arbol.getData() % 2 ==0))
+			lista.add(arbol.getData());
+		
+		return lista;
+		
+	}
 	
 }
