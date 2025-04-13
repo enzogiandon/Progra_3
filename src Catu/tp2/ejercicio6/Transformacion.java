@@ -32,9 +32,9 @@ public class Transformacion {
 				sumaDer += transformar(arbol.getRightChild()); 
 			}
 			
-			int dato = t.getData();
+			int dato = arbol.getData();
 			
-			t.setData(sumaIzq + sumaDer);
+			arbol.setData(sumaIzq + sumaDer);
 			
 				
 				
