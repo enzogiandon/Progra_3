@@ -1,8 +1,8 @@
 package tp1.ej7;
 
-import tp1.ej3.Estudiante;
-
 import java.util.Scanner;
+
+import tp1.ejercicio3.Estudiante;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -315,3 +315,5 @@ public class TestArrayList {
 		return (ArrayList<Integer>) lOrdenada;
 	}
 }
+
+//DIVINO TE AMO

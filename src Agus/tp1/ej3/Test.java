@@ -1,6 +1,8 @@
 package tp1.ej3;
 import java.util.Scanner;
 
+import tp1.ejercicio3.Estudiante;
+
 public class Test {
 
 	public static void main(String[] args) {
