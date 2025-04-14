@@ -1,4 +1,4 @@
-package tp2.ejercicio8;
+ package tp2.ejercicio8;
 
 import tp2.ejercicio1.BinaryTree;
 
@@ -14,52 +14,36 @@ public class ParcialArboles {
 
 
 	public boolean esPrefijo(BinaryTree<Integer> arbol1, BinaryTree<Integer> arbol2){
-        int cant = recorro(arbol1);
-		int aux= Comparo(arbol1,arbol2);
-		return aux == cant;
+        
+		if (arbol1 == null) { //caso arbol1 = null y arbol2 = null o != null
+			 return true;
+		}
+		
+		if (arbol2 == null && arbol1 != null) { //caso arbol2 = null y arbol1 != null
+				return false;
+			}
 		
 		
-	}
+		boolean aux=false;
+		
+		if (arbol1.getData() == arbol2.getData()) {
+			aux=true;
+		}
+		
+		if (aux) {		
+			aux = esPrefijo(arbol1.getLeftChild(),arbol2.getLeftChild());
+			if (aux) {
+			 aux = esPrefijo(arbol1.getRightChild(), arbol2.getRightChild());
+			 return aux;
+			}
+		}
+		
 	
-	private int recorro(BinaryTree<Integer> a1) {
-		if (a1 == null) {
-			return 0;
-		}
-		
-		int i = 0;
-		if (a1.hasLeftChild())
-			i += recorro(a1.getLeftChild());
-		if (a1.hasRightChild()) {
-			i += recorro(a1.getRightChild());
-		}
-		return ++i;
-	}
-	
-	private int Comparo(BinaryTree<Integer> a1, BinaryTree<Integer> a2) {
-		if (a1==null && a2==null) {
-			return 0;
-		}
-		if (a1==null || a2==null) {
-			return -1;
-		}
-		
-		int aux=0;
-		
-		
-		if (a1.hasLeftChild() && a2.hasLeftChild())
-			aux+=Comparo(a1.getLeftChild(),a2.getLeftChild());
-		else return aux;
-		if (a1.hasRightChild() && a2.hasRightChild())
-			aux+=Comparo(a1.getRightChild(),a2.getRightChild());
-		else return aux;
-		
-		if (a1.getData() == a2.getData()) {
-			aux++;
-		}
-		
 		
 		return aux;
 		
+		
 	}
-
+	
+	
 }
