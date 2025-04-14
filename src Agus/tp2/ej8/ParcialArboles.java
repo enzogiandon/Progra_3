@@ -9,9 +9,9 @@ public class ParcialArboles {
 	}
 
 	public static boolean esPrefijo(BinaryTree<Integer> arbol1, BinaryTree<Integer> arbol2) {
-		if (arbol1 == null && arbol2 == null)
+		if (arbol1 == null)
 			return true;
-		if(arbol1 == null || arbol2 == null)
+		if(arbol2 == null)
 			return false;
 
 		if (arbol1.getData() == arbol2.getData()) {
