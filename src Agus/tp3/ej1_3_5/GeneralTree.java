@@ -1,4 +1,4 @@
-package tp3.ej1y3;
+package tp3.ej1_3_5;
 
 import java.util.List;
 
@@ -10,6 +10,9 @@ public class GeneralTree<T> {
 	private T data;
 	private List<GeneralTree<T>> children = new LinkedList<GeneralTree<T>>();
 
+	public GeneralTree() {
+		
+	}
 	public GeneralTree(T data) {
 		this.data = data;
 	}

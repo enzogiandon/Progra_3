@@ -1,7 +1,7 @@
 package tp3.ej4;
 
 import tp1.ej8.Queue;
-import tp3.ej1y3.GeneralTree;
+import tp3.ej1_3_5.GeneralTree;
 
 public class AnalizadorArbol {
 	
@@ -30,8 +30,10 @@ public class AnalizadorArbol {
 			}
 			
 			double prom = sum/ancho;
+			
 			if (prom > max)
 				max = (int) prom;
+			sum = 0;
 		}
 			
 		
