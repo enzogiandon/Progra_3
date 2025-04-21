@@ -3,7 +3,6 @@ package tp3.ej7;
 import java.util.LinkedList;
 import java.util.List;
 
-import tp1.ej8.Queue;
 import tp3.ej1_3_5.GeneralTree;
 
 public class Caminos {
@@ -31,10 +30,13 @@ public class Caminos {
 			}
 		} else {
 			for (GeneralTree<Integer> hijo : arbol.getChildren()) {
-				caminoAHojaMasLejana(arbol, actual, mejor);
+				caminoAHojaMasLejana(hijo, actual, mejor);
 			}
 		}
 		actual.remove(actual.size() - 1);
 	}
 
-}}
+}
+
+
+
