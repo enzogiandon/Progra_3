@@ -26,7 +26,6 @@ public class Parcial {
 					cola.enqueue(hijo);
 				}
 			}
-
 			nodosAnterior = nodosNivel;
 		}
 		return true;
@@ -63,6 +62,4 @@ public class Parcial {
 		}
 		return true;
 	}
-	
-	
 }

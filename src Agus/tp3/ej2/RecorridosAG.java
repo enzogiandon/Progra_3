@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import tp3.ej1.GeneralTree;
+import tp3.ej1_3_5.GeneralTree;
 
 public class RecorridosAG {
 

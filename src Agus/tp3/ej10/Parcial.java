@@ -1,6 +1,5 @@
 package tp3.ej10;
 
-import java.awt.geom.GeneralPath;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -39,7 +38,7 @@ public class Parcial {
 		}	
 		
 		
-		// RETORNOS (NO COLGAR)
+		// RETORNOS (NO COLGAR CON PONER ESTO)
 		lista.addAll(maxLista);
 		
 		return max;
