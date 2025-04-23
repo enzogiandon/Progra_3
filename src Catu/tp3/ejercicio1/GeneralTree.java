@@ -58,6 +58,44 @@ public class GeneralTree<T> {
 				children.remove(child);
 		}
 	}
+	
+	
+	public int altura(GeneralTree<T> a) {
+		if (a == null)
+			return 0;
+		
+		int max = 0;
+		
+		if (this.hasChildren()) {
+			for (GeneralTree<T> child: a.getChildren()) {
+				int alt = altura(child);
+				if (alt > max)
+					max = alt;
+			}
+		}
+		
+		return ++max;
+	}
+	
+	public int nivel(T dato, GeneralTree<T> a) {
+		if (a == null)
+			return 0;
+		
+		if (a.getData() == dato)
+			return contador;
+		
+		
+		
+		if (this.hasChildren()) {
+			for (GeneralTree<T> child: a.getChildren()) {
+				int contador = nivel(dato,a);
+			}
+		}
+		
+		return contador;
+	}
+	
+	
 
 	
 
