@@ -1,6 +1,9 @@
 package tp3.ejercicio1;
 
 import java.util.List;
+
+import tp1.ej8.Queue;
+
 import java.util.LinkedList;
 
 
@@ -81,21 +84,73 @@ public class GeneralTree<T> {
 		if (a == null)
 			return 0;
 		
-		if (a.getData() == dato)
-			return contador;
+		int nivel = 0;
+		int paro = 0;
 		
-		
+		if (a.getData() == dato) {
+			paro=1;
+			return paro;
+		}
+			
+			
 		
 		if (this.hasChildren()) {
 			for (GeneralTree<T> child: a.getChildren()) {
-				int contador = nivel(dato,a);
+				nivel += child.nivel(dato,child);
+				if (paro==1)
+					return nivel;
 			}
 		}
 		
-		return contador;
+		return ++nivel;
 	}
 	
+	public int ancho() {
+		Queue<GeneralTree<T>> cola = new Queue<GeneralTree<T>>();
+		int max = 0;
+		
+		cola.enqueue(this);
+		while (!cola.isEmpty()) {
+			int anchoAct = cola.size();
+			
+			if (anchoAct > max)
+				max = anchoAct;
+			
+			for (int i=0; i<anchoAct;i++) {
+				GeneralTree<T> aux = cola.dequeue();
+				for (GeneralTree<T> hijo: aux.getChildren()) {
+					cola.enqueue(hijo);
+				}
+			}
+		}
+		return max;
+	}
 	
+	public boolean esAncestro(T a, T b) {
+		 GeneralTree<T> nodoA = buscar(this,a);
+		 
+		 if (nodoA == null)
+			 return false;
+		 
+		 return (buscar(nodoA,b) != null); 
+	 }
+	 
+	 public GeneralTree<T> buscar(GeneralTree<T> arbol, T data){
+		 if (arbol == null)
+			 return null;
+		  
+		 if (arbol.getData().equals(data))
+			 return arbol;
+		 
+		 GeneralTree<T> aux = null;
+		 for(GeneralTree<T> hijo: arbol.getChildren()) {
+			 aux = buscar(hijo,data);
+			 if (aux != null)
+				 return aux;
+		 }
+		 return null;
+	 }
+
 
 	
 
