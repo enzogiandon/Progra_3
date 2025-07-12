@@ -22,7 +22,7 @@ public class visitaOslo {
 
 		if (dfs(lugares, ini, fin, maxTiempo, 0, lugaresRestringidos, camino, visitados, camino))
 			;
-		return camino;
+		return camin o;
 
 		return null;
 	}
@@ -30,7 +30,7 @@ public class visitaOslo {
 	private boolean dfs(Graph<String> lugares, Vertex<String> act, Vertex<String> destino, int maxTiempo, int actTiempo,
 			List<String> lugaresRestringidos, boolean visitados[], List<String> camino) {
 
-		if (lugaresRestringidos.contains(act) || visitados[act.getPosition()] || actTiempo > maxTiempo)
+		if (lugaresRestringidos.contains(act.getData()) || visitados[act.getPosition()] || actTiempo > maxTiempo)
 			return false;
 		
 		
@@ -51,7 +51,8 @@ public class visitaOslo {
 			
 		}
 		
-		
+		visitados[act.getPosition()] = false;
+		camino.removeLast();
 		
 		return false;
 	}
