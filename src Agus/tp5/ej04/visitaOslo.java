@@ -22,7 +22,7 @@ public class visitaOslo {
 
 		if (dfs(lugares, ini, fin, maxTiempo, 0, lugaresRestringidos, camino, visitados, camino))
 			;
-		return camin o;
+		return camino;
 
 		return null;
 	}
