@@ -8,6 +8,8 @@ import java.util.List;
 
 public class visitaOslo {
 
+	
+	// Retorna null si no existe el inicio o fin, si hay camino lo retorna, si no hay camino retorna la lista vacia.
 	public List<String> paseoEnBici(Graph<String> lugares, String destino, int maxTiempo,
 			List<String> lugaresRestringidos) {
 
@@ -18,12 +20,12 @@ public class visitaOslo {
 			return null;
 
 		List<String> camino = new ArrayList<String>();
-		boolean[] visitados = new boolean[lugares.getSize()];
+		boolean[] visitados = new boolean[lugares.getSize()]; // Se inicializa en false?? Uso getSize o como en la práctica?
 
-		if (dfs(lugares, ini, fin, maxTiempo, 0, lugaresRestringidos, camino, visitados, camino));
-		return camino;
+		dfs(lugares, ini, fin, maxTiempo, 0, lugaresRestringidos, visitados, camino);
+		return camino; // Si no lo encuentra retorna la lista vacía
 
-		return null;
+		
 	}
 
 	private boolean dfs(Graph<String> lugares, Vertex<String> act, Vertex<String> destino, int maxTiempo, int actTiempo,
@@ -31,7 +33,7 @@ public class visitaOslo {
 
 		if (lugaresRestringidos.contains(act.getData()) || visitados[act.getPosition()] || actTiempo > maxTiempo)
 			return false;
-		
+		// Me fijo acá si está visitado o antes de entrar?
 		
 		visitados[act.getPosition()] = true;
 		camino.add(act.getData());
@@ -45,9 +47,8 @@ public class visitaOslo {
 			int peso = e.getWeight();
 			
 			if (dfs(lugares,sig,destino,maxTiempo,actTiempo + peso,lugaresRestringidos,visitados,camino))
-				return true;
-			
-			
+				return true; // Si lo encuentro no sigo recorriendo, aca es donde se usa el boolean
+		
 		}
 		
 		visitados[act.getPosition()] = false;
