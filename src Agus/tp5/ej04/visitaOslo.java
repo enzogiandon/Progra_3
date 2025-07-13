@@ -20,8 +20,7 @@ public class visitaOslo {
 		List<String> camino = new ArrayList<String>();
 		boolean[] visitados = new boolean[lugares.getSize()];
 
-		if (dfs(lugares, ini, fin, maxTiempo, 0, lugaresRestringidos, camino, visitados, camino))
-			;
+		if (dfs(lugares, ini, fin, maxTiempo, 0, lugaresRestringidos, camino, visitados, camino));
 		return camino;
 
 		return null;
@@ -52,7 +51,7 @@ public class visitaOslo {
 		}
 		
 		visitados[act.getPosition()] = false;
-		camino.removeLast();
+		camino.remove(camino.size()-1);
 		
 		return false;
 	}
