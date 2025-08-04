@@ -1,9 +1,6 @@
-package tp2.ej1;
+package tp2.ej1y2;
 
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Queue;
-import java.util.LinkedList;
+import tp1.ej8.Queue;
 
 public class BinaryTree<T> {
 	private T data;
@@ -100,7 +97,7 @@ public class BinaryTree<T> {
 
 	// Falta implementar la clase Queue en el tp1 y entre n y m
 	
-	public void entreNiveles(int n, m) {
+	public void entreNiveles() {
 		BinaryTree<T> ab = null;
 		Queue<BinaryTree<T>> cola = new Queue<BinaryTree<T>>();
 		cola.enqueue(this);
