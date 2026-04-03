@@ -42,7 +42,7 @@ public class Profesor {
 	
 	@Override
 	public String toString() {
-		return "Profesor [nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", catedra=" + catedra
+		return "Profesor [nombre=" + getNombre() + ", apellido=" + apellido + ", email=" + email + ", catedra=" + catedra
 				+ ", facultad=" + facultad + "]";
 	}
 	
